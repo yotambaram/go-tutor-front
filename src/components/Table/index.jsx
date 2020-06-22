@@ -3,7 +3,7 @@ import "./style.css";
 export default function Table() {
     return (
         <div>
-<div class="table-container">
+<div className="table-container">
   <table className="table table is-bordered is-narrow  ">
     <tr>
     <td><h3>User's Post</h3></td>

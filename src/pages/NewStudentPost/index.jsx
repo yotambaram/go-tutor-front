@@ -8,7 +8,7 @@ import FilterSkills from '../../components/Filter';
 
 
 export default function NewStudentPost(props) {
-    console.log(props);
+   // console.log(props);
     
         const [userState, setUserState] = useState({
           skills: ["None"],
@@ -40,7 +40,7 @@ export default function NewStudentPost(props) {
           //  console.log("PreviousPostDeleted: " + result);
           API.createStudentPost(userState)
           .then(newUser => {
-              console.log(newUser)
+             // console.log(newUser)
               setUserState({
                 about: ""
               })
@@ -52,7 +52,7 @@ export default function NewStudentPost(props) {
                   // console.log("Skills saved to current User: " + result);
                   API.login(loginState)
                   .then(res=>{
-                      console.log(res.data);
+                      //console.log(res.data);
                       props.submitHandler(res.data)
                       history.push("/profile");
                   })
@@ -77,7 +77,7 @@ export default function NewStudentPost(props) {
 
               API.getTeacherMatch({skills:userState.skills.join(",")})
               .then(newUser => {
-                console.log("MATCH RESULT STUDENT SKILLS FOR TEACHERS: ",newUser.data)
+               // console.log("MATCH RESULT STUDENT SKILLS FOR TEACHERS: ",newUser.data)
                 props.passTeachers(newUser.data);
               })
               .catch(err => {
@@ -87,13 +87,13 @@ export default function NewStudentPost(props) {
         }
 
         const getSkills = chosen => {
-          console.log(chosen)
+         // console.log(chosen)
           let chosenskills = chosen;
           setUserState({
             ...userState,
             skills: chosenskills
         })
-        console.log(userState.skills);
+       // console.log(userState.skills);
         
         }
         

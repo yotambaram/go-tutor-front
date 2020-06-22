@@ -51,7 +51,6 @@ export default function Login(props) {
            
               API.getTeacherMatch({ skills: studentSkillsArray.join(",") })
                 .then((newUser) => {
-               
                   props.passTeachers(newUser.data);
                 })
                 .catch((err) => {

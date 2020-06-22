@@ -17,8 +17,8 @@ export default function Navbar(props) {
 
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
-      <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-start">
+      
+        <div className="navbar-brand">
           <Link className="navbar-item" to="/">
             Home
           </Link>
@@ -26,7 +26,7 @@ export default function Navbar(props) {
           <div className="navbar-item">
             <a href="/about">About</a>
           </div>
-        </div>
+       
 
         <div className="navbar-end">
           <div className="navbar-item">
@@ -57,7 +57,7 @@ export default function Navbar(props) {
             </div>
           </div>
         </div>
-      </div>
+        </div>
     </nav>
   );
 }

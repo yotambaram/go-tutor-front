@@ -4,7 +4,7 @@
 // export default function Rating() {
 //     return (
       
-//  class App extends React.Component {
+//  className App extends React.Component {
 //   constructor() {
 //     super();
  
