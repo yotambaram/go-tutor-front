@@ -3,20 +3,20 @@ import API from "../../utils/API"
 import "./style.css"
 
 
-const logoX = "https://avatars2.githubusercontent.com/u/56105414?s=400&u=e52d89d5d9701146a87f29bb59c3d47fd362b66b&v=4"
+//const logoX = "https://avatars2.githubusercontent.com/u/56105414?s=400&u=e52d89d5d9701146a87f29bb59c3d47fd362b66b&v=4"
 
 function FilterSkills(props) {
-  const [allSkillsState, setAllSkillsState] = useState([])
+ // const [allSkillsState, setAllSkillsState] = useState([])
   const [skillState, setWorkingSkillsState] = useState([])
   const [chosenSkillState, setChosenSkillState] = useState([])
   const [searchState, setSearchState] = useState("");
-  const [saveState, setSaveState] = useState([]);
+  //const [saveState, setSaveState] = useState([]);
 
   //all skills
   useEffect(() => {
     API.getSkillResult().then(res => {
       const skillsArr = res.data.map(skill => skill.skill)
-      setAllSkillsState(skillsArr)
+  //    setAllSkillsState(skillsArr)
       setWorkingSkillsState(skillsArr)
     }).catch(err => {
       console.log(err);
