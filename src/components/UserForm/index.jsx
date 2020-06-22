@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import API from "../../utils/API"
 import { Link } from "react-router-dom";
 import ImageUpload from '../../components/ImageWidget';
-import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
+//import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
 
 
 
