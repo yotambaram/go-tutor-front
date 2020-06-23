@@ -1,7 +1,7 @@
 import axios from "axios";
 
-//const BASE_URL = "https://gotutor.herokuapp.com"
-const BASE_URL = "http://localhost:8080"
+const BASE_URL = "https://gotutor.herokuapp.com"
+//const BASE_URL = "http://localhost:8080"
 
 const API = {
     login:function(userData){
@@ -11,7 +11,7 @@ const API = {
         return axios.post(`${BASE_URL}/userSignup`,userData,{withCredentials:true})
     },
     getUserbyId:function(id){
-        return axios.get(`${BASE_URL}/api/players/${id}`)  // what is players?
+        return axios.get(`${BASE_URL}/api/players/${id}`) 
     },
     createStudentPost:function(userData){
         return axios.post(`${BASE_URL}/posts`,userData,{withCredentials:true})
