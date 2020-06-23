@@ -167,7 +167,7 @@ export default function Profile(props) {
                                             <p className="title is-4 ">Your Teacher Post</p>
                                             <p className="title is-6 left-element">ABOUT: <span calssName="is-4">{props.currentUser.Teacher.about}</span></p>
                                             <p className="title is-6 left-element">SKILLS:</p>
-                                            <div class="select is-multiple">
+                                            <div className="select is-multiple">
                                                 <select multiple size="4">
                                                     {props.currentUser.TeacherSkills.map(element => <option value={element.skill}> {element.skill}</option>)}
                                                 </select>
@@ -176,7 +176,7 @@ export default function Profile(props) {
                                     </div>
                                     <nav className="level is-mobile">
                                         <div className="level-left">
-                                            <a class="level-item" aria-label="reply">
+                                            <a className="level-item" aria-label="reply">
                                                 <span className="icon is-small">
                                                     <i className="fas fa-reply" aria-hidden="true"></i>
                                                 </span>
@@ -207,7 +207,7 @@ export default function Profile(props) {
                                             <p className="title is-4 ">Your Student Post</p>
                                             <p className="title is-6 left-element">ABOUT: <span calssName="is-4">{props.currentUser.Studentpost.about}</span></p>
                                             <p className="title is-6 left-element">SKILLS:</p>
-                                            <div class="select is-multiple">
+                                            <div className="select is-multiple">
                                                 <select multiple size="4">
                                                     {props.currentUser.StudentSkills.map(element => <option value={element.skill}> {element.skill}</option>)}
                                                 </select>
@@ -216,7 +216,7 @@ export default function Profile(props) {
                                     </div>
                                     <nav className="level is-mobile">
                                         <div className="level-left">
-                                            <a class="level-item" aria-label="reply">
+                                            <a className="level-item" aria-label="reply">
                                                 <span className="icon is-small">
                                                     <i className="fas fa-reply" aria-hidden="true"></i>
                                                 </span>

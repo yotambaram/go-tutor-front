@@ -47,7 +47,7 @@ const handleFormSubmit = event => {
   
   API.createUser(userState)
   .then(res => {
-      console.log(res.data);
+     // console.log(res.data);
 
       if(res.data){
           props.submitHandler(res.data)
