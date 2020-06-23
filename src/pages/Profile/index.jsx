@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ProfileCard from "../../components/ProfileCard"
 import "./style.css"
 import { Link } from "react-router-dom";
@@ -8,6 +8,16 @@ import StarRatingComponent from 'react-star-rating-component';
 
 
 export default function Profile(props) {
+    if(props.currentUser.Teacher){
+
+        console.log(props.currentUser.Teacher)
+    }
+    
+
+
+
+
+
     const SearchResultArr = []
     const User = props.currentUser;
     const updateTutorRating = (nextValue, prevValue, name) => {
@@ -237,40 +247,13 @@ export default function Profile(props) {
                             </article>
                         </div>
                         : ""}
-
-
-
-
-
-
-
-
-
-
-
                 </div>
 
 
 
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
 
     )
 }
-
-
-
 

@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import API from "../../utils/API"
 import { Link } from "react-router-dom";
 import ImageUpload from '../../components/ImageWidget';
-import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
+//import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
 
 
 
@@ -43,7 +43,7 @@ const handleInputChange = event => {
 
 const handleFormSubmit = event => {
   event.preventDefault();
-  console.log(userState);
+ // console.log(userState);
   
   API.createUser(userState)
   .then(res => {

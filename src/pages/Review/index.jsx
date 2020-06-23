@@ -23,13 +23,13 @@ export default function Review(props) {
 
       const handleFormSubmit = event => {
         event.preventDefault();
-        console.log("inside the handleformsubmit");
+        //console.log("inside the handleformsubmit");
         // console.log(userState);
         
         
         API.getReview(userReview.then( newReview => {
             // console.log(userState)
-            console.log(newReview)
+        //    console.log(newReview)
             setUserReview({
                 rating:"",
                 review:""
@@ -39,7 +39,7 @@ export default function Review(props) {
                   userReview.rating
                   )
               .then(result => {
-                console.log(result)
+             //   console.log(result)
               })
               .catch(err => {
                 console.log(err);
@@ -72,7 +72,7 @@ export default function Review(props) {
 
         
          />
-          </div> */}
+          </div>
         </div>
 
         <div className="field">

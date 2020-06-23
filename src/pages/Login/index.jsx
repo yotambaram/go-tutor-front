@@ -51,7 +51,6 @@ export default function Login(props) {
            
               API.getTeacherMatch({ skills: studentSkillsArray.join(",") })
                 .then((newUser) => {
-               
                   props.passTeachers(newUser.data);
                 })
                 .catch((err) => {
@@ -66,12 +65,12 @@ export default function Login(props) {
     });
   };
 
-  const handleSessionBtnClick = (event) => {
-    event.preventDefault();
-    API.readSessions().then((res) => {
-      console.log(res.data);
-    });
-  };
+  // const handleSessionBtnClick = (event) => {
+  //   event.preventDefault();
+  //   API.readSessions().then((res) => {
+  //     console.log(res.data);
+  //   });
+  // };
 
   return (
     <div className="UserForm">
