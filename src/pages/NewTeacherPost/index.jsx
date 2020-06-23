@@ -134,7 +134,7 @@ export default function NewTeacherPost(props) {
           </div>
           <div className="control">
             <button className="button is-link is-light">
-              <Link to="/profile">Cancel</Link>
+              <Link to="/profile" test={userState}>Cancel</Link>
             </button>
           </div>
         </div>
