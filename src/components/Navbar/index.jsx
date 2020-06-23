@@ -6,7 +6,7 @@ import "./style.css";
 
 export default function Navbar(props) {
   const location = useLocation();
-  console.log(location.pathname);
+  //console.log(location.pathname);
 
   const history = useHistory();
 

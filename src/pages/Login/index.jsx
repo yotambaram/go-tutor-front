@@ -28,7 +28,7 @@ export default function Login(props) {
       if (res.data.id) {
         props.submitHandler(res.data);
           if(res.data.TeacherSkills){
-            console.log("Find teacher post skills This is the data:");
+           // console.log("Find teacher post skills This is the data:");
             const teacherSkillsArray = [];
             res.data.TeacherSkills.forEach((element) => {
               teacherSkillsArray.push(element.skill);
