@@ -8,46 +8,6 @@ import StarRatingComponent from 'react-star-rating-component';
 
 
 export default function Profile(props) {
-    console.log(props.test)
-    if(props.currentUser.Teacher){
-
-        console.log(props.currentUser.Teacher)
-    }
-    if(props.currentUser.Studentpost){
-
-        console.log(props.currentUser.Studentpost)
-    }
-    
-
-    // const [teacherState, setTeacherState] = useState({
-    //     first_name: "",
-    //     last_name: "",
-    //     email: "",
-    //     password: "",
-    //     picture: ""
-    
-    // });
-
-    // const [studentState, setstudentState] = useState({
-    //     first_name: "",
-    //     last_name: "",
-    //     email: "",
-    //     password: "",
-    //     picture: ""
-    
-    // });
-
-    // useEffect(() => {
-        
-    //   }, [props.currentUser.Studentpost])
-
-
-     // useEffect(() => {
-        
-    //   }, [props.currentUser.Teacher])
-
-
-
     const SearchResultArr = []
     const User = props.currentUser;
     const updateTutorRating = (nextValue, prevValue, name) => {
@@ -207,7 +167,7 @@ export default function Profile(props) {
                                             <p className="title is-4 ">Your Teacher Post</p>
                                             <p className="title is-6 left-element">ABOUT: <span calssName="is-4">{props.currentUser.Teacher.about}</span></p>
                                             <p className="title is-6 left-element">SKILLS:</p>
-                                            <div className="select is-multiple">
+                                            <div class="select is-multiple">
                                                 <select multiple size="4">
                                                     {props.currentUser.TeacherSkills.map(element => <option value={element.skill}> {element.skill}</option>)}
                                                 </select>
@@ -216,7 +176,7 @@ export default function Profile(props) {
                                     </div>
                                     <nav className="level is-mobile">
                                         <div className="level-left">
-                                            <a className="level-item" aria-label="reply">
+                                            <a class="level-item" aria-label="reply">
                                                 <span className="icon is-small">
                                                     <i className="fas fa-reply" aria-hidden="true"></i>
                                                 </span>
@@ -247,7 +207,7 @@ export default function Profile(props) {
                                             <p className="title is-4 ">Your Student Post</p>
                                             <p className="title is-6 left-element">ABOUT: <span calssName="is-4">{props.currentUser.Studentpost.about}</span></p>
                                             <p className="title is-6 left-element">SKILLS:</p>
-                                            <div className="select is-multiple">
+                                            <div class="select is-multiple">
                                                 <select multiple size="4">
                                                     {props.currentUser.StudentSkills.map(element => <option value={element.skill}> {element.skill}</option>)}
                                                 </select>
@@ -256,7 +216,7 @@ export default function Profile(props) {
                                     </div>
                                     <nav className="level is-mobile">
                                         <div className="level-left">
-                                            <a className="level-item" aria-label="reply">
+                                            <a class="level-item" aria-label="reply">
                                                 <span className="icon is-small">
                                                     <i className="fas fa-reply" aria-hidden="true"></i>
                                                 </span>
@@ -277,13 +237,40 @@ export default function Profile(props) {
                             </article>
                         </div>
                         : ""}
+
+
+
+
+
+
+
+
+
+
+
                 </div>
 
 
 
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
 
     )
 }
+
+
+
 

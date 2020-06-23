@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="hero-body">
         <div className="container">
           <h1 className="title">
-            Welcome to our Tutor App
+            Welcome to goTutor
 
       </h1>
           <h2 className="subtitle">
