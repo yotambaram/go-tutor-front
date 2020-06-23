@@ -46,6 +46,7 @@ const [teachersearch, setTeacherSearch] = useState(false);
 
 
   const loginSubmitHandler= userData=>{
+    console.log(userData)
     setCurrentUser(userData)
   }
 
