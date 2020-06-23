@@ -37,7 +37,6 @@ const [teachersearch, setTeacherSearch] = useState(false);
   
 
   const passStudents = students => {
-    console.log(students)
     setStudentSearch(students)
   }
 

@@ -8,6 +8,16 @@ import StarRatingComponent from 'react-star-rating-component';
 
 
 export default function Profile(props) {
+    if(props.currentUser.Teacher){
+
+        console.log(props.currentUser.Teacher)
+    }
+    
+
+
+
+
+
     const SearchResultArr = []
     const User = props.currentUser;
     const updateTutorRating = (nextValue, prevValue, name) => {
