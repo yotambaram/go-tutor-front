@@ -9,7 +9,7 @@ export default function ImageUpload(props) {
         if(resultEvent.event === "success"){
             
 
-            console.log( resultEvent.info.secure_url)
+         //   console.log( resultEvent.info.secure_url)
             props.getPicture(resultEvent.info.secure_url);
         //     this.props.postPhoto({user_id: this.props.currentUser.id,
         //     caption:'',

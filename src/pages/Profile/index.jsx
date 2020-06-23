@@ -2,12 +2,13 @@ import React from 'react'
 import ProfileCard from "../../components/ProfileCard"
 import "./style.css"
 import { Link } from "react-router-dom";
-//import StarRatingComponent from 'react-star-rating-component';
+import StarRatingComponent from 'react-star-rating-component';
 
 
 
 
 export default function Profile(props) {
+    console.log(props)
     //const SearchResultArr = []
     const User = props.currentUser;
     // const updateTutorRating = (nextValue, prevValue, name) => {
@@ -24,8 +25,8 @@ export default function Profile(props) {
         ];
     };
 
-    //const tutors = getTutors();
-    //const tutorCards = [];
+    const tutors = getTutors();
+    const tutorCards = [];
 
     // for (let i = 0; i < tutors.length; i++) {
     //     const tutor = tutors[i];

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class CalendlyEmbed extends React.Component {
+className CalendlyEmbed extends React.Component {
 
   buildCalendlyUrl = (account, eventName) =>
     `https://calendly.com/${account}/${eventName}`

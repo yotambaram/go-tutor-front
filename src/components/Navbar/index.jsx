@@ -17,7 +17,6 @@ export default function Navbar(props) {
 
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
-      
           <Link className="navbar-item" to="/">
             Home
           </Link>
@@ -25,8 +24,6 @@ export default function Navbar(props) {
           <div className="navbar-item">
             <a href="/about">About</a>
           </div>
-        
-
           <div className="navbar-item">
             <div className="buttons">
               {!props.currentUser && location.pathname !== "/signup" ? (
@@ -54,8 +51,6 @@ export default function Navbar(props) {
               )}
             </div>
           </div>
-        
-     
     </nav>
   );
 }

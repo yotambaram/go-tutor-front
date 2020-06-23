@@ -43,7 +43,7 @@ const handleInputChange = event => {
 
 const handleFormSubmit = event => {
   event.preventDefault();
-  console.log(userState);
+ // console.log(userState);
   
   API.createUser(userState)
   .then(res => {
