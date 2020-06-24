@@ -2,44 +2,12 @@ import React from 'react'
 import ProfileCard from "../../components/ProfileCard"
 import "./style.css"
 import { Link } from "react-router-dom";
-import StarRatingComponent from 'react-star-rating-component';
 
-
-
-
-export default function Profile(props) {
-    const SearchResultArr = []
+export default function Profile(props) {   
     const User = props.currentUser;
-    const updateTutorRating = (nextValue, prevValue, name) => {
-        const dataToSupplyIntoAPI = {
-            rating: nextValue,
-        }
-
-    }
-
-    const getTutors = () => {
-        return [
-
-            { id: 3, name: "Sveta", rating: 3 }
-        ];
-    };
-
-    const tutors = getTutors();
-    const tutorCards = [];
-
-    for (let i = 0; i < tutors.length; i++) {
-        const tutor = tutors[i];
-        tutorCards.push(
-            <div>
-                {tutor.name} : <StarRatingComponent name={tutor.id} value={tutor.rating} onStarClick={
-                    (nextValue, prevValue, name) => updateTutorRating(nextValue, prevValue, name)
-                } />
-            </div>
-        );
-    }
-
+    //console.log(props)
+   
     return (
-
         <div className="ProfilePage center-element">
 
             <div className="columns ">
@@ -93,9 +61,6 @@ export default function Profile(props) {
                                     </article>
                                 </div>
 
-
-
-
                             </li>
                         )) : ""}
                     </ul>
@@ -103,10 +68,7 @@ export default function Profile(props) {
                 </div>
                 <div className="column is-4">
                     <button className="button is-danger is-outlined tutor-button"><Link to='/newpost'>LOOK FOR TEACHER</Link></button>
-
-
                     <ul>
-
                         {props.teachersearch ? props.teachersearch.map(userInfo => (
                             <li key={userInfo.userID}>
                                 <div className="box teacherbox">
@@ -149,15 +111,12 @@ export default function Profile(props) {
                                         </div>
                                     </article>
                                 </div>
-
                             </li>
-
                         )) : ""}
                     </ul>
-
                 </div>
                 <div className="column is-2">
-                    {props.currentUser.Teacher ?
+                    {User.Teacher ?
                         <div className="box teacher-box">
                             <article className="media">
                                 <div className="media-content">
@@ -165,11 +124,11 @@ export default function Profile(props) {
                                         <br />
                                         <div >
                                             <p className="title is-4 ">Your Teacher Post</p>
-                                            <p className="title is-6 left-element">ABOUT: <span calssName="is-4">{props.currentUser.Teacher.about}</span></p>
+                                            <p className="title is-6 left-element">ABOUT: <span calssName="is-4">{User.Teacher.about ? User.Teacher.about : ""}</span></p>
                                             <p className="title is-6 left-element">SKILLS:</p>
                                             <div className="select is-multiple">
                                                 <select multiple size="4">
-                                                    {props.currentUser.TeacherSkills.map(element => <option value={element.skill}> {element.skill}</option>)}
+                                                    {User.TeacherSkills ? User.TeacherSkills.map(element => <option value={element.skill}> {element.skill}</option>) : ""}
                                                 </select>
                                             </div>
                                         </div>
@@ -197,7 +156,7 @@ export default function Profile(props) {
                             </article>
                         </div>
                         : ""}
-                    {props.currentUser.Teacher ?
+                    {User.Teacher ?
                         <div className="box student-post">
                             <article className="media">
                                 <div className="media-content">
@@ -205,11 +164,11 @@ export default function Profile(props) {
                                         <br />
                                         <div >
                                             <p className="title is-4 ">Your Student Post</p>
-                                            <p className="title is-6 left-element">ABOUT: <span calssName="is-4">{props.currentUser.Studentpost.about}</span></p>
+                                            <p className="title is-6 left-element">ABOUT: <span calssName="is-4">{User.Studentpost.about ? User.Studentpost.about : ""}</span></p>
                                             <p className="title is-6 left-element">SKILLS:</p>
                                             <div className="select is-multiple">
                                                 <select multiple size="4">
-                                                    {props.currentUser.StudentSkills.map(element => <option value={element.skill}> {element.skill}</option>)}
+                                                    {User.StudentSkills ? User.StudentSkills.map(element => <option value={element.skill}> {element.skill}</option>) : ""}
                                                 </select>
                                             </div>
                                         </div>
