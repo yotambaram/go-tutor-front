@@ -4,8 +4,6 @@ import UserForm from '../../components/UserForm';
 // import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
 
 export default function SignUp(props) {
-
-    // console.log(props);
     const submitHandler = props.submitHandler;
     return (
         <div>

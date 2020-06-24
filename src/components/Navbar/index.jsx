@@ -6,28 +6,18 @@ import "./style.css";
 
 export default function Navbar(props) {
   const location = useLocation();
-  //console.log(location.pathname);
-
   const history = useHistory();
-
   const handleLogoutClick = (event) => {
     API.logout().then((res) => {
       props.logoutHandle();
       history.push("/");
     });
   };
-
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
-        
           <Link className="navbar-item" to="/">
             Home
           </Link>
-
-       
-
-     
-        
             <div className="buttons">
               {!props.currentUser && location.pathname !== "/signup" ? (
                 <Link className="button is-primary" to="/signup">
@@ -36,7 +26,6 @@ export default function Navbar(props) {
               ) : (
                 ""
               )}
-
               {!props.currentUser && location.pathname !== "/login" ? (
                 <Link className="button is-light" to="/login">
                   Log In
@@ -44,7 +33,6 @@ export default function Navbar(props) {
               ) : (
                 ""
               )}
-
               {props.currentUser ? (
                 <button className="button is-light" onClick={handleLogoutClick}>
                   Log Out

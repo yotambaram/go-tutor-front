@@ -21,7 +21,7 @@ export default function Profile(props) {
                     <button className="button is-link is-outlined tutor-button"><Link to='/newTeacherPost'>LOOK FOR A STUDENT</Link></button>
                     <ul className="center-element">
                         {props.studentsearch ? props.studentsearch.map(userInfo => (
-                            <li key={userInfo.userID}>
+                            <li key={userInfo.id}>
                                 <div className="box studentbox">
                                     <article className="media">
                                         <div className="media-left">
@@ -70,7 +70,7 @@ export default function Profile(props) {
                             </li>
                         )) : ""}
                     </ul>
-                    <div calssName="palceholder"></div>
+                    <div className="palceholder"></div>
                 </div>
                 <div className="column is-4">
                     <button className="button is-danger is-outlined tutor-button"><Link to='/newpost'>LOOK FOR TEACHER</Link></button>
@@ -136,18 +136,18 @@ export default function Profile(props) {
                                         <br />
                                         <div >
                                             <p className="title is-4 ">Your Teacher Post</p>
-                                            <p className="title is-6 left-element">ABOUT: <span calssName="is-4">{User.Teacher.about}</span></p>
+                                            <p className="title is-6 left-element">ABOUT: <span className="is-4">{User.Teacher.about}</span></p>
                                             <p className="title is-6 left-element">SKILLS:</p>
-                                            <div class="select is-multiple">
+                                            <div className="select is-multiple">
                                                 <select multiple size="4">
-                                                    {User.TeacherSkills.map(element => <option value={element.skill}> {element.skill}</option>)}
+                                                    {User.TeacherSkills.map(element => <option key={element.skill} value={element.skill}> {element.skill}</option>)}
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <nav className="level is-mobile">
                                         <div className="level-left">
-                                            <a class="level-item" aria-label="reply">
+                                            <a className="level-item" aria-label="reply">
                                                 <span className="icon is-small">
                                                     <i className="fas fa-reply" aria-hidden="true"></i>
                                                 </span>
@@ -176,18 +176,18 @@ export default function Profile(props) {
                                         <br />
                                         <div >
                                             <p className="title is-4 ">Your Student Post</p>
-                                            <p className="title is-6 left-element">ABOUT: <span calssName="is-4">{User.Studentpost.about}</span></p>
+                                            <p className="title is-6 left-element">ABOUT: <span className="is-4">{User.Studentpost.about}</span></p>
                                             <p className="title is-6 left-element">SKILLS:</p>
-                                            <div class="select is-multiple">
+                                            <div className="select is-multiple">
                                                 <select multiple size="4">
-                                                    {User.StudentSkills.map(element => <option value={element.skill}> {element.skill}</option>)}
+                                                    {User.StudentSkills.map(element => <option key={element.skill} value={element.skill}> {element.skill}</option>)}
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <nav className="level is-mobile">
                                         <div className="level-left">
-                                            <a class="level-item" aria-label="reply">
+                                            <a className="level-item" aria-label="reply">
                                                 <span className="icon is-small">
                                                     <i className="fas fa-reply" aria-hidden="true"></i>
                                                 </span>

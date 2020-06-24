@@ -7,9 +7,7 @@ import FilterSkills from '../../components/Filter';
 
 
 
-export default function NewStudentPost(props) {
-   // console.log(props);
-    
+export default function NewStudentPost(props) {    
         const [userState, setUserState] = useState({
           skills: ["None"],
             about: ""
@@ -23,7 +21,6 @@ export default function NewStudentPost(props) {
         }
         
         const handleInputChange = event => {
-          console.log(event)
           const { name, value } = event.target;
           setUserState({
               ...userState,
@@ -37,22 +34,17 @@ export default function NewStudentPost(props) {
           
         API.deleteCurrentPost()
         .then(result => {
-          //  console.log("PreviousPostDeleted: " + result);
           API.createStudentPost(userState)
           .then(newUser => {
-             // console.log(newUser)
               setUserState({
                 about: ""
               })
               API.deleteStudentSkills()
               .then(result => {
-                // console.log("Skills deleted from current User: " + result);
                 API.saveStudentSkills(userState.skills)
                 .then(result => {
-                  // console.log("Skills saved to current User: " + result);
                   API.login(loginState)
                   .then(res=>{
-                      //console.log(res.data);
                       props.submitHandler(res.data)
                       history.push("/profile");
                   })
@@ -77,7 +69,6 @@ export default function NewStudentPost(props) {
 
               API.getTeacherMatch({skills:userState.skills.join(",")})
               .then(newUser => {
-               // console.log("MATCH RESULT STUDENT SKILLS FOR TEACHERS: ",newUser.data)
                 props.passTeachers(newUser.data);
               })
               .catch(err => {
@@ -87,13 +78,11 @@ export default function NewStudentPost(props) {
         }
 
         const getSkills = chosen => {
-         // console.log(chosen)
           let chosenskills = chosen;
           setUserState({
             ...userState,
             skills: chosenskills
         })
-       // console.log(userState.skills);
         
         }
         

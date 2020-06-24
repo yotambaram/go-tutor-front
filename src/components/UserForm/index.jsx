@@ -9,10 +9,6 @@ import ImageUpload from '../../components/ImageWidget';
 
 
 export default function UserForm(props) {
-
-// console.log(props);
-
-
 const getPicture = pic => {
   let Picture = pic;
 
@@ -43,11 +39,9 @@ const handleInputChange = event => {
 
 const handleFormSubmit = event => {
   event.preventDefault();
- // console.log(userState);
   
   API.createUser(userState)
   .then(res => {
-     // console.log(res.data);
 
       if(res.data){
           props.submitHandler(res.data)
