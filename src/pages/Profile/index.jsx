@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ProfileCard from "../../components/ProfileCard"
 import "./style.css"
 import { Link } from "react-router-dom";
+import StarRatingComponent from 'react-star-rating-component';
 
-export default function Profile(props) {   
+
+
+
+export default function Profile(props) {
     const User = props.currentUser;
-    //console.log(props)
-   
     return (
+
         <div className="ProfilePage center-element">
 
             <div className="columns ">
@@ -61,6 +64,9 @@ export default function Profile(props) {
                                     </article>
                                 </div>
 
+
+
+
                             </li>
                         )) : ""}
                     </ul>
@@ -68,7 +74,10 @@ export default function Profile(props) {
                 </div>
                 <div className="column is-4">
                     <button className="button is-danger is-outlined tutor-button"><Link to='/newpost'>LOOK FOR TEACHER</Link></button>
+
+
                     <ul>
+
                         {props.teachersearch ? props.teachersearch.map(userInfo => (
                             <li key={userInfo.userID}>
                                 <div className="box teacherbox">
@@ -111,9 +120,12 @@ export default function Profile(props) {
                                         </div>
                                     </article>
                                 </div>
+
                             </li>
+
                         )) : ""}
                     </ul>
+
                 </div>
                 <div className="column is-2">
                     {User.Teacher ?
@@ -124,18 +136,18 @@ export default function Profile(props) {
                                         <br />
                                         <div >
                                             <p className="title is-4 ">Your Teacher Post</p>
-                                            <p className="title is-6 left-element">ABOUT: <span calssName="is-4">{User.Teacher.about ? User.Teacher.about : ""}</span></p>
+                                            <p className="title is-6 left-element">ABOUT: <span calssName="is-4">{User.Teacher.about}</span></p>
                                             <p className="title is-6 left-element">SKILLS:</p>
-                                            <div className="select is-multiple">
+                                            <div class="select is-multiple">
                                                 <select multiple size="4">
-                                                    {User.TeacherSkills ? User.TeacherSkills.map(element => <option value={element.skill}> {element.skill}</option>) : ""}
+                                                    {User.TeacherSkills.map(element => <option value={element.skill}> {element.skill}</option>)}
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <nav className="level is-mobile">
                                         <div className="level-left">
-                                            <a className="level-item" aria-label="reply">
+                                            <a class="level-item" aria-label="reply">
                                                 <span className="icon is-small">
                                                     <i className="fas fa-reply" aria-hidden="true"></i>
                                                 </span>
@@ -164,18 +176,18 @@ export default function Profile(props) {
                                         <br />
                                         <div >
                                             <p className="title is-4 ">Your Student Post</p>
-                                            <p className="title is-6 left-element">ABOUT: <span calssName="is-4">{User.Studentpost.about ? User.Studentpost.about : ""}</span></p>
+                                            <p className="title is-6 left-element">ABOUT: <span calssName="is-4">{User.Studentpost.about}</span></p>
                                             <p className="title is-6 left-element">SKILLS:</p>
-                                            <div className="select is-multiple">
+                                            <div class="select is-multiple">
                                                 <select multiple size="4">
-                                                    {User.StudentSkills ? User.StudentSkills.map(element => <option value={element.skill}> {element.skill}</option>) : ""}
+                                                    {User.StudentSkills.map(element => <option value={element.skill}> {element.skill}</option>)}
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <nav className="level is-mobile">
                                         <div className="level-left">
-                                            <a className="level-item" aria-label="reply">
+                                            <a class="level-item" aria-label="reply">
                                                 <span className="icon is-small">
                                                     <i className="fas fa-reply" aria-hidden="true"></i>
                                                 </span>
