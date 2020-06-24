@@ -19,7 +19,6 @@ const [studentsearch, setStudentSearch] = useState(false);
 const [teachersearch, setTeacherSearch] = useState(false);
 
   useEffect(()=>{
-    //  console.log("Running UseEffect");
      
     API.readSessions().then(res=>{
       if(res.data.user){

@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 import FilterSkills from "../../components/Filter";
 
 export default function NewTeacherPost(props) {
-  // console.log(props);
-
   const [userState, setUserState] = useState({
     skills: ["None"],
     about: "",
@@ -37,15 +35,10 @@ export default function NewTeacherPost(props) {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-   // console.log("inside the handleformsubmit");
-    //console.log(userState);
-
     API.deleteTeacherCurrentPost()
       .then((result) => {
-        //  console.log("PreviousPostDeleted: " + result);
         API.createTeacherPost(userState)
           .then((newUser) => {
-           // console.log(newUser);
             setUserState({
               about: "",
               YearsofExperience: "",
@@ -58,7 +51,6 @@ export default function NewTeacherPost(props) {
                   .then((result) => {
                     console.log("Skills saved to current User: ", result);
                     API.login(loginState).then((res) => {
-                     // console.log(res.data);
                       props.submitHandler(res.data);
                       history.push("/profile");
                     });
@@ -82,7 +74,6 @@ export default function NewTeacherPost(props) {
     if (userState.skills) {
       API.getStudentMatch({ skills: userState.skills.join(",") })
         .then((newUser) => {
-         // console.log(newUser.data)
           props.passStudents(newUser.data);
         })
         .catch((err) => {

@@ -21,14 +21,10 @@ export default function Login(props) {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    // console.log(loginState);
-
     API.login(loginState).then((res) => {
-      
       if (res.data.id) {
         props.submitHandler(res.data);
           if(res.data.TeacherSkills){
-           // console.log("Find teacher post skills This is the data:");
             const teacherSkillsArray = [];
             res.data.TeacherSkills.forEach((element) => {
               teacherSkillsArray.push(element.skill);
@@ -36,7 +32,6 @@ export default function Login(props) {
           
             API.getStudentMatch({ skills: teacherSkillsArray.join(",") })
               .then((newUser) => {
-
                 props.passStudents(newUser.data);
               })
               .catch((err) => {
@@ -64,13 +59,6 @@ export default function Login(props) {
       }
     });
   };
-
-  // const handleSessionBtnClick = (event) => {
-  //   event.preventDefault();
-  //   API.readSessions().then((res) => {
-  //     console.log(res.data);
-  //   });
-  // };
 
   return (
     <div className="UserForm">
